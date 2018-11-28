@@ -1,37 +1,34 @@
-# Slim Framework 3 Skeleton Application
+# A voucher pool microservice based in PHP.
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+Done with Slim framework (https://www.slimframework.com/).
+And Eloquent. 
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+## What is a voucher pool?
+   A voucher pool is a collection of (voucher) codes that can be used by 
+   customers (recipients) to get discounts in a web shop. Each code may 
+   only be used once, and we would like to know when it was used by the 
+   recipient. Since there can be many recipients in a voucher pool, we 
+   need a call that auto-generates voucher codes for each recipient.
+   
+## Add to valet [see laravel]
+    
+    cd public
+    valet link voucher-api
 
-## Install the Application
-
-Run this command from the directory in which you want to install your new Slim Framework application.
-
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
-
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
+## run    
 To run the application in development, you can run these commands 
 
-	cd [my-app-name]
 	php composer.phar start
 
+## test
 Run this command in the application directory to run the test suite
 
 	php composer.phar test
 
-That's it! Now go build something cool.
 
+# routes 
 
 Method	URL	Action
-GET	/todos	Retrieve all todos
-GET	/todos/search/bug	Search for todos with ‘bug’ in their name
-GET	/todo/1	Retrieve todo with id == 1
-POST	/todo	Add a new todo
-PUT	/todo/1	Update todo with id == 1
-DELETE	/todo/1	Delete todo with id == 1
-# slimframework_voucher_api
+GET /           Home
+GET	/redeem	              Retrieve all todos
+GET	/generate
